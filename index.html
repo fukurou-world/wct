@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ちびクロ</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>POKERWEB COINの税額シミュレーション</h1>
+
+			<div class="input-section">
+				<p class="radio-description">
+					わかる場合は課税所得を、不明な場合は給与所得（年収）を選んでください
+				</p>
+				<div class="radio-group">
+					<input
+						type="radio"
+						id="taxable"
+						name="incomeType"
+						value="taxableIncome"
+						checked
+					/>
+					<label for="taxable">課税所得</label>
+					<input
+						type="radio"
+						id="salary"
+						name="incomeType"
+						value="salaryIncome"
+					/>
+					<label for="salary">給与所得</label>
+				</div>
+
+				<p class="radio-description">
+					所得とコインの額をスライダーで調整してください
+				</p>
+				<div class="slider-container">
+					<label for="incomeSlider"
+						><span id="incomeTypeLabel">課税所得</span>金額 (<span
+							id="incomeLabel"
+							>200万円</span
+						>)</label
+					>
+					<input
+						type="range"
+						id="incomeSlider"
+						min="2000000"
+						max="20000000"
+						step="1000000"
+						value="2000000"
+					/>
+				</div>
+
+				<div class="slider-container">
+					<label for="coinSlider"
+						>コイン金額 (<span id="coinLabel">0円</span>)</label
+					>
+					<input
+						type="range"
+						id="coinSlider"
+						min="0"
+						max="10000000"
+						step="100000"
+						value="0"
+					/>
+				</div>
+			</div>
+
+			<div class="result-section">
+				<h2>計算結果</h2>
+				<p id="resultDisplayTotal">合計金額: 0円</p>
+				<p id="resultDisplayCoin">合計金額: 0円</p>
+			</div>
+
+			<div class="note-box">
+				<p>※あくまで目安程度にご参照ください</p>
+				<p>※間違えている可能性もあることをご了承ください</p>
+				<li>POKERWEB COINは一時所得に該当するものとして計算しています</li>
+				<li>
+					<a
+						href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm"
+						>税率の計算方法</a
+					>
+				</li>
+				<li>月額給与が年収の14分の1と想定しています。</li>
+				<li>賞与は年2回、1ヶ月分の給与と同額であると想定しています。</li>
+				<li>
+					給与所得に対しては、基礎控除、社会保険料（厚生年金、健康保険、雇用保険）の控除を行なっています。
+				</li>
+				<ul>
+					<li>
+						<a
+							href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html"
+							>厚生年金の計算方法</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.kyoukaikenpo.or.jp/~/media/Files/shared/hokenryouritu/r7/ippan/13tokyo.pdf"
+							>協会けんぽ東京支部の健康保険料</a
+						>で計算しています
+					</li>
+					<li>
+						<a href="https://www.mhlw.go.jp/content/001401966.pdf"
+							>雇用保険料率</a
+						>は、一般の事業として計算しています
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
