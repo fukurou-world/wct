@@ -35,11 +35,12 @@ const coinAndTaxable = (webcoin, taxableIncome) => {
 		};
 	}
 	webcoin = webcoin - 500000;
-	taxableIncome = taxableIncome + webcoin / 2;
-	const taxDetails = getTaxDetails(taxableIncome);
+	const taxableCoin = webcoin / 2;
+	const totalTaxable = taxableIncome + taxableCoin;
+	const taxDetails = getTaxDetails(totalTaxable);
 	return {
-		totalTax: taxableIncome * (taxDetails.rate / 100) - taxDetails.deduction,
-		coinTax: webcoin * (taxDetails.rate / 100),
+		totalTax: totalTaxable * (taxDetails.rate / 100) - taxDetails.deduction,
+		coinTax: taxableCoin * (taxDetails.rate / 100),
 	};
 };
 
