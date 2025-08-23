@@ -244,15 +244,14 @@ const updateCalculation = () => {
 	const resultCoinTax = result.coinTax;
 
 	// 結果を表示
-	resultDisplayTotal.textContent = `所得税目安: ${formatCurrency(
+	resultDisplayTotal.textContent = `所得税額: ${formatCurrency(
 		resultTotalTax
 	)}`;
 	// 結果を表示
 	if (result.underFive) {
-		resultDisplayCoin.textContent =
-			"50万円以下のコイン収益に税は発生しません。";
+		resultDisplayCoin.textContent = "50万円以下のポーカー収益は課税されません";
 	} else {
-		resultDisplayCoin.textContent = `内、コイン税: ${formatCurrency(
+		resultDisplayCoin.textContent = `内、ポーカーの税額: ${formatCurrency(
 			resultCoinTax
 		)}`;
 	}

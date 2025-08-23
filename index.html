@@ -5,15 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ちびクロ</title>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" type="image/x-icon" href="img/favicon32chibi.png" />
 		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<div class="container">
-			<h1>POKERWEB COINの税額シミュレーション</h1>
+			<h1>ポーカー収益の税額シミュレーション</h1>
 
 			<div class="input-section">
 				<p class="radio-description">
-					わかる場合は課税所得を、不明な場合は給与所得（年収）を選んでください
+					1年間の課税所得もしくは給与所得を選んでください
 				</p>
 				<div class="radio-group">
 					<input
@@ -34,7 +35,7 @@
 				</div>
 
 				<p class="radio-description">
-					所得とコインの額をスライダーで調整してください
+					所得（ポーカー収益以外）とポーカー収益の金額をそれぞれスライダーで調整してください
 				</p>
 				<div class="slider-container">
 					<label for="incomeSlider"
@@ -55,12 +56,12 @@
 
 				<div class="slider-container">
 					<label for="coinSlider"
-						>コイン金額 (<span id="coinLabel">0円</span>)</label
+						>ポーカー収益金額 (<span id="coinLabel">0円</span>)</label
 					>
 					<input
 						type="range"
 						id="coinSlider"
-						min="0"
+						min="300000"
 						max="10000000"
 						step="100000"
 						value="0"
@@ -73,11 +74,24 @@
 				<p id="resultDisplayTotal">合計金額: 0円</p>
 				<p id="resultDisplayCoin">合計金額: 0円</p>
 			</div>
+			<div>
+				<p class="result-description">
+					<a
+						href="https://lin.ee/rJ8vsC1"
+						style="
+							color: #00c300;
+							text-decoration: underline;
+							font-weight: bold;
+						"
+						>LINE</a
+					>からポーカー収益の記録・課税額の確認ができます
+				</p>
+			</div>
 
 			<div class="note-box">
 				<p>※あくまで目安程度にご参照ください</p>
-				<p>※間違えている可能性もあることをご了承ください</p>
-				<li>POKERWEB COINは一時所得に該当するものとして計算しています</li>
+				<p>※給与所得では扶養を想定していません</p>
+				<li>ポーカーは一時所得に該当するものとして計算しています</li>
 				<li>
 					<a
 						href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm"
@@ -108,6 +122,13 @@
 						>は、一般の事業として計算しています
 					</li>
 				</ul>
+				<li>一時所得が50万円を超える場合は、確定申告が必要になります</li>
+				<li>
+					未申告による税務リスク（延滞税、税務調査等）は利用者自身の責任となります
+				</li>
+				<li>
+					本サービスでは、個別の税務相談や具体的な税額の質問にはお答えできません
+				</li>
 			</div>
 		</div>
 	</body>
